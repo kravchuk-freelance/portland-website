@@ -1,0 +1,57 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bckgrnd_white;
+    padding: 0 75px;
+    border-radius: 5px;
+    min-height: 90px;
+    margin-bottom: 50px;
+
+    &_list {
+        @extend %clearfix;
+    }
+    
+    &_item {
+        float: left;
+    }
+    
+    &_link {
+        @include font(14px, 50px, 'Montserrat-Regular');
+        
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        border-radius: 50%;
+        color: $text_blue_2;
+        font-weight: bold;
+        
+        &:hover {
+            box-shadow: 0 5px 10px $border_gray_2;
+        }
+        
+    }
+    
+    .active {
+        box-shadow: 0 5px 10px $border_gray_2;
+        color: $text_gray_1;
+    }
+    
+    .preview,
+    .next {
+        @include font(18px, 50px, 'Montserrat-Regular');
+        
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        border-radius: 50%;
+        color: $text_blue_2;
+        font-weight: bold;
+        
+        &:hover {
+            box-shadow: 0 5px 10px $border_gray_2;
+        }
+
+    }
+
+}

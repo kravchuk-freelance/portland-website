@@ -1,0 +1,10 @@
+.main {
+    background-color: $bckgrnd_gray_1;
+
+    &_content {
+        @extend %center_block;
+
+        padding: 50px 0;
+    }
+
+}

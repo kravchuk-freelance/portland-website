@@ -1,0 +1,94 @@
+.header {
+    background-color: $bckgrnd_white;
+    
+    // TOP
+    &_top {
+        @extend %center_block;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        margin-left: auto;
+        
+        &_wrap {
+            border-bottom: 1px solid $border_gray_1;
+        }
+        
+    }
+
+    .logo_link {
+        display: inline-block;
+        margin-left: 30px;
+    }
+    
+    // BOTTOM
+    &_bottom {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 55px;
+
+        &_wrap {
+            @extend %center_block;
+
+            position: relative;
+        }
+
+        .support {
+
+            &_link {
+                @include font(11px, 1, 'Montserrat-Regular');
+
+                display: inline-block;
+                color: $text_gray_1;
+                font-weight: bold;
+                margin-right: 35px;
+
+                &:hover {
+                    color: $text_blue_1;
+                }
+
+            }
+
+            .search {
+                
+                position: relative;
+                display: inline-block;
+                
+                &_label {
+                    @extend .icon-search;
+                    
+                    &::before {
+                        position: absolute;
+                        top: 50%;
+                        left: 15px;
+                        transform: translateY(-50%);
+                        font-size: 15px;
+                        color: $text_blue_1;
+                        cursor: pointer;
+                    }
+
+                }
+
+                &_input {
+                    border: 0;
+                    height: 50px;
+                    padding: 0 40px;
+                    border-left: 1px solid $border_gray_1;
+                    border-right: 1px solid $border_gray_1;
+                    color: $text_blue_1;
+
+                    &::placeholder {
+                        color: $text_gray_1;
+                    }
+
+                }
+
+            }
+
+        }
+        
+    }
+    
+}

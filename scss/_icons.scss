@@ -1,0 +1,122 @@
+@font-face {
+	font-family: "myfont";
+	src: url('../fonts/iconsfont/myfont.eot');
+	src: url('../fonts/iconsfont/myfont.eot?#iefix') format('eot'),
+		url('../fonts/iconsfont/myfont.woff2') format('woff2'),
+		url('../fonts/iconsfont/myfont.woff') format('woff'),
+		url('../fonts/iconsfont/myfont.ttf') format('truetype'),
+		url('../fonts/iconsfont/myfont.svg#myfont') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "myfont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == arrow-down {
+		$char: "\E001";
+	}
+	@if $filename == arrow-left {
+		$char: "\E002";
+	}
+	@if $filename == arrow-right {
+		$char: "\E003";
+	}
+	@if $filename == cart {
+		$char: "\E004";
+	}
+	@if $filename == check-box-empty {
+		$char: "\E005";
+	}
+	@if $filename == check-box-mark {
+		$char: "\E006";
+	}
+	@if $filename == check-mark-circle-1 {
+		$char: "\E007";
+	}
+	@if $filename == check-mark-circle-2 {
+		$char: "\E008";
+	}
+	@if $filename == facebook {
+		$char: "\E009";
+	}
+	@if $filename == google {
+		$char: "\E00A";
+	}
+	@if $filename == menu {
+		$char: "\E00B";
+	}
+	@if $filename == search {
+		$char: "\E00C";
+	}
+	@if $filename == twitter {
+		$char: "\E00D";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-arrow-down {
+	@include icon(arrow-down);
+}
+.icon-arrow-left {
+	@include icon(arrow-left);
+}
+.icon-arrow-right {
+	@include icon(arrow-right);
+}
+.icon-cart {
+	@include icon(cart);
+}
+.icon-check-box-empty {
+	@include icon(check-box-empty);
+}
+.icon-check-box-mark {
+	@include icon(check-box-mark);
+}
+.icon-check-mark-circle-1 {
+	@include icon(check-mark-circle-1);
+}
+.icon-check-mark-circle-2 {
+	@include icon(check-mark-circle-2);
+}
+.icon-facebook {
+	@include icon(facebook);
+}
+.icon-google {
+	@include icon(google);
+}
+.icon-menu {
+	@include icon(menu);
+}
+.icon-search {
+	@include icon(search);
+}
+.icon-twitter {
+	@include icon(twitter);
+}

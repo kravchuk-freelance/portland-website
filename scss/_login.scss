@@ -1,0 +1,55 @@
+.login {
+    @extend %clearfix;
+
+    width: 18.018%;
+    
+    .cart_link {
+        @include font(11px, 1, 'Montserrat-Regular');
+        @extend .icon-cart;
+        
+        float: left;
+        padding: 0 8px;
+        color: $text_blue_1;
+        font-weight: bold;
+        line-height: 30px;
+
+        &::before {
+            position: relative;
+            right: 8px;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        &::after {
+            content: "0";
+            position: relative;
+            left: 8px;
+            display: inline-block;
+            line-height: 24px;
+            min-width: 24px;
+            text-align: center;
+            background-color: $border_gray_2;
+            border-radius: 50%;
+        }
+
+    }
+    
+    .sign_link {
+        @include font(11px, 1, 'Montserrat-Regular');
+        
+        float: right;
+        color: $text_blue_1;
+        font-weight: bold;
+        min-width: 85px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid $border_gray_2;
+        border-radius: 50px;
+        
+        &:hover {
+            border: 1px solid $text_blue_1;
+        }
+
+    }
+
+}

@@ -1,0 +1,402 @@
+.sidebar {
+    width: 23.0769%;
+    float: left;
+
+    // MENU
+    .menu {
+        margin-bottom: 30px;
+
+        &_list {
+            background-color: $bckgrnd_white;
+            border-radius: 5px;
+        }
+
+        &_item {
+            border-bottom: 1px solid $border_gray_1;
+            
+            &:last-child {
+                border: 0;
+            }
+        }
+        
+        &_label {
+            @include font(13px, 42px, 'Montserrat-Regular');
+            @extend .icon-arrow-right;
+            
+            position: relative;
+            display: block;
+            padding: 0 18px;
+            font-weight: bold;
+            color: $text_blue_1;
+            cursor: pointer;
+            
+            &::before {
+                position: absolute;
+                top: 50%;
+                right: 18px;
+                transform: translateY(-50%);
+                font-size: 10px;
+                color: $text_gray_4;
+            }
+
+        }
+
+        input:checked + label {
+            @extend .icon-arrow-down;
+        }
+
+        &_input {
+            display: none;
+        }
+
+        .submenu {
+
+            &_list {
+                display: none;
+                background-color: $bckgrnd_gray_2;
+            }
+
+            &_item {
+                padding: 0 18px;
+                border-bottom: 1px solid $border_gray_5;
+    
+                &:last-child {
+                    border: 0;
+                }
+
+            }
+
+            &_link {
+                @include font(11px, 42px, 'Montserrat-Regular');
+
+                position: relative;
+                display: block;
+                font-weight: bold;
+                color: $text_gray_3;
+                text-transform: uppercase;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+            }
+
+        }
+
+        #hi_tech:checked ~ .submenu_list {
+            display: block;
+        }
+
+    }
+
+    // BRANDS
+    .brand {
+        margin-bottom: 30px;
+        background-color: $bckgrnd_white;
+        border-radius: 5px;
+        font-size: 0;
+        
+        .available {
+
+            &_title {
+                @include font(11px, 48px, 'Montserrat-Regular');
+                
+                display: block;
+                padding: 0 18px;
+                font-weight: bold;
+                color: $text_blue_1;
+                border-bottom: 1px solid $border_gray_1;
+                text-transform: uppercase;
+            }
+            
+            &_input {
+                display: none;
+            }
+            
+            &_list {
+                border-bottom: 1px solid $border_gray_1;
+            }
+    
+            &_label {
+                @include font(11px, 48px, 'Montserrat-Regular');
+                
+                position: relative;
+                display: block;
+                font-weight: bold;
+                color: $text_blue_1;
+                text-align: left;
+                padding: 0 10px 0 50px;
+                cursor: pointer;
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 27px;
+                    transform: translate(-50%, -50%);
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid $border_gray_1;
+                    border-radius: 50%;
+                }
+    
+            }
+    
+            input:checked + label::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 23px;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $text_green_1;
+            }
+
+        }
+
+        .brand_name {
+            margin-bottom: 30px;
+            background-color: $bckgrnd_white;
+            border-radius: 5px;
+            font-size: 0;
+
+            input {
+                display: none;
+            }
+
+            .brand_title {
+                @include font(11px, 48px, 'Montserrat-Regular');
+                
+                display: inline-block;
+                font-weight: bold;
+                width: 70%;
+                text-transform: uppercase;
+                
+                &_wrap {
+                    padding: 0 18px;
+                    border-bottom: 1px solid $border_gray_1;
+                    font-size: 0;
+                    margin-bottom: 10px;
+                }
+                
+            }
+
+            .brand_link {
+                @include font(11px, 48px, 'Montserrat-Regular');
+                
+                display: inline-block;
+                font-weight: bold;
+                text-align: center;
+                color: $text_blue_3;
+                width: 30%;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+    
+            }
+
+            .brand_item {
+
+                &:last-child {
+                    
+                    .brand_label {
+                        padding-bottom: 5px;
+                    }
+    
+                }
+    
+            }
+
+            .brand_label {
+                @include font(13px, 40px, 'Montserrat-Regular');
+                @extend .icon-check-box-empty;
+                
+                display: block;
+                color: $text_blue_1;
+                font-weight: bold;
+                padding: 0 10px 0 40px;
+                cursor: pointer;
+    
+                &::before {
+                    color: $border_gray_2;
+                    font-size: 20px;
+                    position: relative;
+                    left: -15px;
+                    top: 5px;
+                }
+                
+            }
+            
+            .brand_input:checked + .brand_label {
+                @extend .icon-check-box-mark;
+                
+                &::before {
+                    color: $text_green_1;
+                    font-size: 20px;
+                    position: relative;
+                    left: -15px;
+                    top: 5px;
+                }
+                
+            }
+
+        }
+
+    }
+
+    // CONDITION
+    .condition {
+        margin-bottom: 30px;
+        background-color: $bckgrnd_white;
+        border-radius: 5px;
+        font-size: 0;
+
+        input {
+            display: none;
+        }
+
+        &_title {
+            @include font(11px, 48px, 'Montserrat-Regular');
+            
+            display: inline-block;
+            font-weight: bold;
+            width: 70%;
+            text-transform: uppercase;
+            
+            &_wrap {
+                padding: 0 18px;
+                border-bottom: 1px solid $border_gray_1;
+                font-size: 0;
+                margin-bottom: 10px;
+            }
+            
+        }
+        
+        &_item {
+
+            &:last-child {
+                
+                .condition_label {
+                    padding-bottom: 5px;
+                }
+
+            }
+
+        }
+        
+        &_link {
+            @include font(11px, 48px, 'Montserrat-Regular');
+            
+            display: inline-block;
+            font-weight: bold;
+            text-align: center;
+            color: $text_blue_3;
+            width: 30%;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+        
+        &_label {
+            @include font(13px, 40px, 'Montserrat-Regular');
+            @extend .icon-check-box-empty;
+            
+            display: block;
+            color: $text_blue_1;
+            font-weight: bold;
+            padding: 0 10px 0 40px;
+            cursor: pointer;
+
+            &::before {
+                color: $border_gray_2;
+                font-size: 20px;
+                position: relative;
+                left: -15px;
+                top: 5px;
+            }
+            
+        }
+        
+        .condition_input:checked + .condition_label {
+            @extend .icon-check-box-mark;
+            
+            &::before {
+                color: $text_green_1;
+                font-size: 20px;
+                position: relative;
+                left: -15px;
+                top: 5px;
+            }
+            
+        }
+        
+    }
+    
+    // DELIVERY
+    .delivery {
+        margin-bottom: 30px;
+        background-color: $bckgrnd_white;
+        border-radius: 5px;
+        font-size: 0;
+        
+        &_title {
+            @include font(11px, 48px, 'Montserrat-Regular');
+            
+            display: block;
+            padding: 0 18px;
+            font-weight: bold;
+            color: $text_blue_1;
+            border-bottom: 1px solid $border_gray_1;
+            text-transform: uppercase;
+        }
+
+        input {
+            display: none;
+        }
+        
+        label {
+            @include font(11px, 48px, 'Montserrat-Regular');
+            
+            position: relative;
+            font-weight: bold;
+            color: $text_blue_1;
+            display: inline-block;
+            width: 50%;
+            text-align: center;
+            border-right: 1px solid $border_gray_1;
+            cursor: pointer;
+            
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 27px;
+                transform: translate(-50%, -50%);
+                width: 18px;
+                height: 18px;
+                border: 2px solid $border_gray_1;
+                border-radius: 50%;
+            }
+
+        }
+
+        input:checked + label::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 23px;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $text_green_1;
+        }
+
+    }
+
+}

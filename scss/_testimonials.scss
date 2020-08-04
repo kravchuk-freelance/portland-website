@@ -1,0 +1,74 @@
+.testimonials {
+    background-color: $bckgrnd_white;
+
+    &_content {
+        @extend %center_block;
+
+        padding: 70px;
+    }
+
+    &_title {
+        @include font(32px, 1, 'Montserrat-Black');
+
+        color: $text_black_1;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    &_subtitle {
+        @include font(16px, 1, 'CrimsonText-Italic');
+        
+        color: $text_gray_1;
+        margin-bottom: 45px;
+        text-align: center;
+    }
+
+    .notice {
+
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &_item {
+            @extend %clearfix;
+
+            flex-basis: 330px;
+            padding: 0 30px;
+        }
+
+        &_img {
+            border-radius: 50%;
+            
+            &_wrap {
+                float: left;
+                margin-right: 30px;
+            }
+
+        }
+
+        &_name {
+            @include font(14px, 20px, 'Montserrat-Regular');
+
+            font-weight: bold;
+            color: $text_blue_2;
+            margin-bottom: 5px;
+        }
+        
+        &_career {
+            @include font(14px, 20px, 'CrimsonText-Italic');
+            
+            color: $text_gray_1;
+            margin-bottom: 10px;
+        }
+        
+        &_text {
+            @include font(16px, 24px, 'CrimsonText-Regular');
+            
+            color: $text_blue_2;
+        }
+
+    }
+
+}

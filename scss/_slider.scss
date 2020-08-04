@@ -1,0 +1,149 @@
+.slider {
+    background-color: $bckgrnd_black_1;
+    
+    &_list {
+        @extend %center_block;
+    }
+
+    &_item {
+        position: relative;
+        padding: 100px;
+        overflow: hidden;
+    }
+
+    &_description {
+        width: 48.4536%;
+        float: left;
+    }
+    
+    &_title {
+        @include font(42px, 1, 'Montserrat-Black');
+        
+        color: $text_white_1;
+        margin-bottom: 30px;
+    }
+    
+    &_text {
+        @include font(16px, 1, 'CrimsonText-Regular');
+        
+        color: $text_white_1;
+        margin-bottom: 65px;
+    }
+    
+    &_link {
+        @include font(11px, 1, 'Montserrat-Regular');
+        
+        color: $text_white_1;
+        display: inline-block;
+        width: 165px;
+        background-color: #2754eb;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 50px;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+    
+    &_img {
+        margin: 0 auto;
+        
+        &_wrap {
+            width: 48.4536%;
+            position: absolute;
+            right: 0;
+            top: -65px;
+        }
+
+    }
+
+}
+
+.slick-prev {
+    @extend .icon-arrow-left;
+
+    left: 0;
+    z-index: 1;
+    height: 0;
+    width: 0;
+
+    &::before {
+        font-size: 15px;
+        color: $text_white_1;
+        opacity: 1;
+        display: inline-block;
+        line-height: 40px;
+        width: 40px;
+        border: 1px solid $text_gray_2;
+        border-radius: 50%;
+    }
+
+}
+
+.slick-next {
+    @extend .icon-arrow-right;
+
+    right: 0;
+    z-index: 1;
+    height: 0;
+    width: 0;
+    
+    &::before {
+        font-size: 15px;
+        color: $text_white_1;
+        opacity: 1;
+        display: inline-block;
+        line-height: 40px;
+        width: 40px;
+        border: 1px solid $text_gray_2;
+        border-radius: 50%;
+    }
+
+}
+
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+    display: none;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-dots {
+    bottom: 20px;
+
+    & li {
+        margin: 0;
+    }
+
+}
+
+.slick-dots li button {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        border: 2px solid $text_white_1;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+}
+
+.slick-dots li.slick-active button:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: $text_white_1;
+    border: 2px solid $text_white_1;
+    border-radius: 50%;
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+.nav {
+
+    &_list {
+        @extend %clearfix;
+    }
+
+    &_item {
+        float: left;
+        margin-left: 30px;
+        
+        &:first-child {
+            margin-left: 0;
+        }
+
+    }
+
+    &_link {
+        @include font(14px, 1, 'Montserrat-Regular');
+
+        position: relative;
+        display: inline-block;
+        color: $text_blue_1;
+        font-weight: bold;
+
+        &:hover::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            border: 1px solid #343e5c;
+            transform: translate(-50%, -50%);
+            border-radius: 50px;
+        }
+
+    }
+
+}

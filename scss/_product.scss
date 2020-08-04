@@ -1,0 +1,190 @@
+.product {
+    width: 74.35897%;
+    float: right;
+
+    &_wrap {
+        @extend %clearfix;
+    }
+
+    &_list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    &_item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 31.03448%;
+        min-height: 380px;
+        text-align: center;
+        padding: 30px 0;
+        background-color: $bckgrnd_white;
+        margin-bottom: 30px;
+        border-radius: 5px;
+
+        &:last-child {
+
+            .product_img {
+                top: 75%;
+            
+                &_wrap {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                }
+            
+            }
+
+            .product_description {
+                position: absolute;
+                top: 40px;
+                left: 0;
+            }
+
+            .product_link {
+                margin-bottom: 10px;
+            }
+
+            .product_price {
+                color: $text_gray_5;
+            }
+
+        }
+
+        &_big {
+            @extend %clearfix;
+
+            display: inline-block;
+            width: 65.517%;
+            padding: 0;
+            
+            .product_img {
+
+                &_wrap {
+                    height: 300px;
+                    overflow: hidden;
+                    border-radius: 5px 5px 0 0;
+                }
+
+            }
+
+            .product_title {
+                float: left;
+                width: 50%;
+                text-align: left;
+                padding: 0 0 0 25px;
+                margin-bottom: 20px;
+            }
+            
+            .product_color {
+                margin-bottom: 0;
+            }
+
+            .product_link {
+                margin-bottom: 12px;
+            }
+
+            .product_link_buy {
+                display: inline-block;
+                margin-right: 20px;
+                width: 45%;
+            }
+
+            .product_price {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 5px 10px;
+                color: #ffffff;
+                background-color: #1c1e23;
+                border-radius: 5px;
+                margin: 15px 15px;
+            }
+
+        }
+        
+    }
+
+    &_img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+
+        &_wrap {
+            position: relative;
+            margin-bottom: 20px;
+            height: 210px;
+            overflow: hidden;
+        }
+
+    }
+
+    &_title {
+        padding: 0 25px;
+    }
+
+    &_link {
+        @include font(16px, 1, 'Montserrat-Regular');
+
+        font-weight: bold;
+        color: $text_black_2;
+        display: block;
+        margin-bottom: 20px;
+
+        &:hover {
+            text-shadow: 0 0 5px $text_gray_2;
+        }
+
+        &_buy {
+            @include font(11px, 1, 'Montserrat-Regular');
+        
+            display: none;
+            font-weight: bold;
+            color: $text_blue_1;
+            margin-bottom: 10px;
+            float: right;
+            width: 230px;
+            line-height: 34px;
+            padding: 0 15px;
+            border: 2px solid $border_gray_1;
+            border-radius: 50px;
+        }
+
+    }
+
+    &_info {
+        display: inline-block;
+        padding-right: 30px;
+    }
+
+    &_buy {
+        display: inline-block;
+        padding-left: 30px;
+        border-left: 2px solid $border_gray_1;
+    }
+    
+    &_color {
+        @include font(12px, 1, 'Montserrat-Regular');
+    
+        font-weight: bold;
+        color: $text_gray_4;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    &_price {
+        @include font(14px, 1, 'Montserrat-Regular');
+        
+        font-weight: bold;
+        color: $text_blue_1;
+        margin-bottom: 10px;
+    }
+
+}

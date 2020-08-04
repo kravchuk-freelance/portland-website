@@ -1,0 +1,67 @@
+.header {
+
+    .menu {
+
+        &_logo_wrap {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        &_icon_lable {
+            @extend .icon-menu;
+
+            cursor: pointer;
+            font-size: 16px;
+            padding: 35px 63px 35px 0;
+            border-right: 1px solid $border_gray_1;
+            cursor: pointer;
+
+            &:hover::before {
+                background-color: $border_gray_2;
+            }
+
+        }
+
+        &_icon_input {
+            display: none;
+
+            &:checked + .header_bottom {
+                display: flex;
+            }
+
+        }
+        
+        &_list {
+            @extend %center_block;
+        }
+        
+        &_item {
+            float: left;
+            margin-left: 30px;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        &_link {
+            @include font(11px, 1, 'Montserrat-Regular');
+
+            color: $text_gray_1;
+            font-weight: bold;
+            text-transform: uppercase;
+            
+            &:hover {
+                color: $text_blue_1;
+            }
+            
+        }
+        
+        .active {
+            color: $text_blue_1;
+        }
+
+    }
+
+}

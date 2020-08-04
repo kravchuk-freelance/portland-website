@@ -1,0 +1,34 @@
+html {
+	font-size: $base_font_size;
+}
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Arial, sans-serif;
+}
+ul, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+img {
+  display: block;
+}
+input {
+	outline: none;
+	padding: 0;
+	margin: 0;
+
+	&[type="number"]::-webkit-outer-spin-button,
+	&[type="number"]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	
+}
